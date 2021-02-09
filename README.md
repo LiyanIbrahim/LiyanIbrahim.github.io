@@ -7,7 +7,7 @@ While the video itself presents a lighthearted and fun concept, I wanted my webs
 
 Initially, I didn’t know what theme would match the video since the video’s theme was a simple and flexible one and so it was tough picking one theme and making sure all the other elements of the website design matched it. I decided to find a color palette that I liked and go on from there. </br>
 This was the color palette chosen: </br>
-![]()
+![](https://github.com/LiyanIbrahim/LiyanIbrahim.github.io/blob/main/newphoto.png)
 
 After that, I identified all the other aspects of the website I wanted to include and used the wireframe that I previously designed as reference. 
 I also have an ongoing list of websites that I think are cool and, while most of them are maybe too complicated for me to execute at this stage, I did implement some more basic ideas into my website. </br> 
