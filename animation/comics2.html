@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lqng="en" dir="ltr">
+ <head>
+ 	<meta charset="utf-8">
+ 	 	<link rel="stylesheet" href="style2.css"/>
+ 	<title></title>
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style2.css">
+ </head>
+ <body>
+
+<!-- PANEL 1 -->
+<div class="main" id= "section1">
+  <h2>Panel 1</h2>
+  <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+
+  <!-- the parent div places two images on top of one another -->
+  <div class= "parent" data-aos= "fade-up">
+  <img class="static" id="first" src="p1_still.svg" alt="">
+  <img class= "imageSize" src="p1_hover.gif" alt="">
+</div>
+</div>
+
+<div class="main" id= "section2">
+  <h2>Panel 2</h2>
+  <a href="#section3">Click Me to Smooth Scroll to Next section</a>
+
+<!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+
+    <!-- the parent div places two images on top of one another -->
+  <div class= "parent" data-aos= "fade-up">
+  <img class="imageSize" src="p2_still.svg" alt="">
+</div>
+<!-- <button class="buttonstyle" id="panel2button"> Click to add ingredients! </button> -->
+<button class="buttonstyle" id="panel2butter" onclick="window.location.href='comics2.html';"> Butter </button>
+<button class="buttonstyle" id="panel2sugar"> Cane Sugar </button>
+<button class="buttonstyle" id="panel2flour"> Flour </button>
+<button class="buttonstyle" id="panel2eggs"> Eggs </button>
+<button class="buttonstyle" id="panel2bs"> Baking Soda </button>
+
+</div>
+</div>
+
+<div class="main" id= "section3">
+  <h2>Panel 3</h2>
+  <a href="#section4">Click Me to Smooth Scroll to Next section</a>
+
+  <!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+
+    <!-- the parent div places two images on top of one another -->
+  <div class= "parent" data-aos= "fade-up">
+  <img class="imageSize" id="mix" src="p3_still-01.svg" alt="">
+</div>
+<button class="buttonstyle" id="panel3button"> Click to Add </button>
+</div>
+</div>
+
+<div class="main" id="section4">
+  <h2>Panel 4</h2>
+  <a href="#section5">Click Me to Smooth Scroll to Next section</a>
+  <div id= "cookiechoice">
+    <button class="buttonstyle" id="p4chocobutton"> Chocolate Cookie </button>
+    <button class="buttonstyle" id="p4nutsbutton"> Nuts Cookie </button>
+
+  </div>
+</div>
+
+<div class="main" id="section5">
+  <h2>Panel 5</h2>
+  <a href="#section6">Click Me to Smooth Scroll to Next section</a>
+
+  <!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+
+    <!-- the parent div places two images on top of one another -->
+  <div class= "parent" data-aos= "fade-up">
+  <img class="imageSize" src="p5_1_still.svg" alt="">
+</div>
+<button class="buttonstyle" id="p5button"> Add Batter </button>
+
+</div>
+</div>
+
+<div class="main" id="section6">
+  <h2>Panel 6</h2>
+  <a href="#section1">Click Me to Smooth Scroll to the first section</a>
+  <img class="imageSize" src="p6_still-01.svg" alt="">
+</div>
+
+<script src="script.js"> </script>
+ </body>
+
+</html>
