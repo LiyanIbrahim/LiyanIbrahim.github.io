@@ -1,0 +1,155 @@
+<!-- Birthday Fiesta by Liyan, Lucy, Tobbi and Marta!  -->
+<!DOCTYPE html>
+<html lqng="en" dir="ltr">
+ <head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="style2.css"/>
+  <title></title>
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style2.css">
+ </head>
+ <body>
+
+<!-- PANEL 1 -->
+<div class="main" id= "section1">
+
+  <div id= "comictitle"> Birthday Fiesta </div>
+
+  <p class= "instructions"> Instructions: <br> </p>
+  <p class= "ins_text">     Hover over the image then click to see what happens next. </p>
+
+
+  <!-- the parent div places two images on top of one another -->
+
+  <div class= "parent" data-aos= "fade-up">
+  <img class="static" id="first" src="p1_still.svg" alt="">
+  <img class= "imageSize" src="p1_hover.gif" alt="">
+  <audio id="audio" src="p1_notificaton.m4a"></audio>
+</div>
+<div class= "text"> Oh! I completely forgot that today was my friends' birthday. <br>
+  <br><br> What should I do? <br> <br>
+  Maybe I will bake some cookies and invite you to celebrate together. <br> <br>
+  We could eat and laugh and catch up in the old days ... <br> <br>
+  But first, let's buy the ingredients for the best cookies from my granny's recipe.
+</div>
+</div>
+
+<!-- PANEL 2 -->
+<div class="main" id= "section2">
+
+<!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+
+    <div class= "text">
+      Okay, looks like I need to buy butter, cane sugar, flour, baking soda, and an egg... <br> <br>
+    </div>
+
+    <!-- the parent div places two images on top of one another -->
+    <div class= "parent" data-aos= "fade-up">
+  <img class="imageSize" id="p2I" src="p2_still.svg" alt="">
+
+</div>
+
+<div class= "text">
+  Perfect! All the ingredients are in the store.
+</div>
+
+<div class="try">
+
+<button class="buttonstyle" id="panel2B"> Gather Ingredients </button>
+</div>
+</div>
+</div>
+
+
+
+<!-- PANEL 3 -->
+<div class="main" id= "section3">
+
+  <!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+
+    <div class= "text"> I just got home and I am ready to start baking! <br><br>
+      I need to add 1 cup of softened butter, 3/4 cup of cane sugar, 2 and 1/4 cups of flour, 1 teaspoon of baking soda, and 1 egg.
+    </div>
+
+    <!-- the parent div places two images on top of one another -->
+    <div class= "parent" data-aos= "fade-up">
+  <img class="imageSize" id="mix" src="p3_still-01.svg" alt="">
+  <audio id="audio3" src="p3_mixing.m4a"></audio>
+  <audio id="audioadd" loop>
+    <source src="p3_adding.m4a" type="audio/mp3">
+    </audio>
+</div>
+
+<p class= "instructions"> Instruction: <br> </p>
+<p class= "ins_text">     Hover over the button then click to add each ingredient. </p>
+
+<button class="buttonstyle" id="panel3button"> Click to Add </button>
+</div>
+</div>
+
+<!-- PANEL 4 -->
+<div class="main" id="section4">
+
+  <div class= "Maincontainer">
+    <div class= "text"> All ingredients are now mixed. <br><br>
+      All that's left to do is adding my specialties. <br><br>
+      Ah, so hard to decide... I don't know what my friends would prefer!</div>
+    <div class= "parent" data-aos= "fade-up">
+      <img class="imageSize" id="choice" src="p4_still.svg" alt="">
+    </div>
+
+    <div class="text"> Should I add chocolate chips or chopped nuts?</div>
+    <div id= "cookiechoice">
+      <button class="buttonstyle" id="p4chocobutton"> Chocolate  </button>
+            <audio id="audio4_1" src="p4_unwrapping.m4a"></audio>
+      <button class="buttonstyle" id="p4nutsbutton"> Chopped Nuts  </button>
+            <audio id="audio4_2" src="p4_chopping.m4a"></audio>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 5 -->
+<div class="main" id="section5">
+
+  <!-- Maincontainer sets the button in flex display -->
+  <div class= "Maincontainer">
+    <div class= "parent" data-aos= "fade-up">
+      <img class="imageSize" id="bake" src="p5_1_still.svg" alt="">
+      <audio id="audio5_1" src="p5_dropping.m4a"></audio>
+      <audio id="audio5_2" src="p5_preheat.m4a"></audio>
+      <audio id="audio5_3" src="p5_baking.m4a"></audio>
+    </div>
+    <div id="p5text"> Let's now form balls of dough and drop them regularly on the baking tray.</div>
+  <button class="buttonstyle" id="p5button"> Add batter </button>
+  </div>
+</div>
+
+
+<!-- PANEL 6 -->
+<div class="main" id="section6">
+
+  <div class= "text"> Thanks to you, we can now celebrate their birthdays!</div>
+  <p class= "instructions"> Instructions: <br> </p>
+  <p class= "ins_text">     Click to sing them a birthday song! </p>
+
+  <div class= "parent" data-aos= "fade-up">
+    <img class="imageSize" id="celebration" src="p6_still_choc.PNG" alt="">
+    <audio id="audio6" src="p6_happybirthday.m4a"></audio>
+
+  </div>
+  <div id= "finaltext"> -The End-</div>
+
+
+  <p class= "footer1"> Sponsored by NYUAD Comm Lab <br> Liyan, Lucy, Marta, Tobbi <br> @2021Spring </p>
+
+</div>
+
+<script src="script.js"> </script>
+ </body>
+
+</html>
