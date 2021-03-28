@@ -1,0 +1,25 @@
+body{
+	background-color: white;
+	transition: 0.5s linear all;
+}
+
+.interactable{
+	position: absolute;
+	width:10%;
+	height:10%;
+	top:45%;
+	left:45%;
+	border:2px solid blue;
+
+}
+
+.filler{
+	position: absolute;
+	width:10%;
+	height:10%;
+	top:10%;
+	left:45%;
+	border:2px solid blue;
+	color:orange;
+
+}
