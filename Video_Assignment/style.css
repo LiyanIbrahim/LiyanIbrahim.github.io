@@ -1,0 +1,125 @@
+.title{
+	text-align: center;
+	font-size: 200%; 
+}
+/*video{
+	display: block;
+	margin: 0 auto;
+	width:70%;
+	position: absolute;
+	top: 30%;
+	left:10%;
+}*/
+body{
+	background-color: #D4F1F4;
+}
+video {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:80%;
+}
+.button1style{
+	text-align: center;
+	bottom: 0px;
+	position: absolute;
+	top: 90%;
+	right:50%;
+/*	left:50%;*/
+
+}
+
+#myProgress{
+    width: 100%;
+    font-size: 30px;
+    overflow: hidden; /* contain floated elements */
+    background: #ccc
+}
+#myBar1 {
+    float: left; 
+    width: 33%;
+    background-color: #000000;
+    color:#05445E;
+
+}
+#myBar2 { 
+    float: left;
+    background-color: #eee;
+    width: 33%;
+    color:#05445E;
+  
+}
+#myBar3{
+    float: left;
+    width: 33%;
+    background-color: #bbb;
+    color:#05445E;
+    
+}
+.typing{
+	width:100%;
+	height:10%;
+	position: absolute;
+	top: 50%;
+	background-color: #05445E;
+	opacity: 0.5;
+}
+#demo{
+	color:white;
+}
+
+#playSTEP1{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:10%;
+}
+#pauseSTEP1{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:20%;
+}
+#muteSTEP1{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:30%;
+}
+#playSTEP2{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:10%;
+}
+#pauseSTEP2{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:20%;
+}
+#muteSTEP2{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:30%;
+}
+#playSTEP3{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:10%;
+}
+#pauseSTEP3{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:20%;
+}
+#muteSTEP3{
+	position: absolute;
+    width: 5%;
+    height: 5%;
+    top:30%;
+}
