@@ -1,0 +1,336 @@
+body{
+	 background-color: #052b2d;
+	 cursor: url(logoCLgreen.png), auto;
+
+ 
+}
+
+#time{
+	background-color: #b7846c;
+	border: 2px solid #aef9d1;
+	position:fixed;
+	right:0%;
+	bottom:0%;
+}
+
+#welcomeText{
+	background-color: #b7846c;
+	border:2px solid #aef9d1;
+	position:absolute;
+	left:0%;
+	bottom:0%;
+	position: fixed;
+}
+#welcomeExp{
+	border: 2px solid #aef9d1;
+	background-color: #b7846c;
+	position:fixed;
+	left:0%;
+	bottom:0%;
+	width:45%;
+	height:45%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column {
+  flex: 25%;
+  max-width: 15%;
+  padding: 0 10px;
+}
+
+.column img {
+  margin-top: 60px;
+  margin-left:40px;
+  vertical-align: right;
+}
+/*Responsiveness*/
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+#text{
+	color:#b2ffd6;
+  margin-left:40px;
+/*  vertical-align: center;*/
+}
+#comic{
+	margin-top: 55px;
+width:40%
+}
+#comic:hover{
+	width:60%;
+}
+#sound{
+	margin-top: 42px;
+	width:40%
+}
+#sound:hover{
+	width:60%;
+}
+#FF{
+	margin-top: 75px;
+	width:40%
+}
+#FF:hover{
+	width:60%;
+}
+#video{
+	margin-top: 51px;
+	width:40%
+}
+#video:hover{
+	width:60%;
+}
+#about{
+	margin-top: 63px;
+	width:40%
+}
+#about:hover{
+/*	margin-top: 73px;*/
+	width:60%;
+}
+#trash{
+	margin-top: 63px;
+	width:40%
+}
+#trash:hover{
+	width:60%;
+}
+#aboutExp{
+	position:absolute;
+	width:40%;
+	height:40%;
+	top:26%;
+	left:50%;
+	background-color: #db8eab;
+	border:2px solid #aef9d1;
+	border-radius: 25px;
+	overflow-x: hidden;
+  	overflow-y: auto;
+  	text-align: center;
+  	 padding: 20px;
+  	 font-size: 20px;
+
+}
+#header1{
+	position:absolute;
+	top:0%;
+	left:0%;
+	background-color: #16704f;
+	border:2px solid #aef9d1;
+	border-radius: 25px;
+	width:100%;
+	height:10%;
+	text-align:center;
+	margin:0px;
+	text-align:center;
+	transform: translateY(-10%)
+	z-index:3;
+  
+}
+
+#aboutTitle{
+transform: translateY(-85%)
+}
+#close{
+	position:absolute;
+	top:19%;
+	width:5%;
+	height: auto;
+	right:4%;
+	transform: translateY(-20%);
+	min-width: 18px;
+
+}
+
+#trashExp{
+	position:absolute;
+	width:35%;
+	height:35%;
+	top:58%;
+	right:3%;
+	background-color: #db8eab;
+	border:2px solid #aef9d1;
+	border-radius: 25px;
+	overflow-x: hidden;
+  	overflow-y: auto;
+  	text-align: center;
+  	 padding: 10px;
+  	 font-size: 17px;
+}
+#header2{
+	position:absolute;
+	top:0%;
+	left:0%;
+	background-color: #16704f;
+	border:2px solid #aef9d1;
+	border-radius: 25px;
+	width:100%;
+	height:10%;
+	text-align:center;
+	margin:0px;
+	text-align:center;
+	transform: translateY(-10%)
+  
+}
+#trashTitle{
+transform: translateY(-85%)
+}
+#closeTrash{
+	position:absolute;
+	top:21%;
+	width:5%;
+	height: auto;
+	right:4%;
+	transform: translateY(-20%);
+	min-width: 18px;
+
+}
+#closeWelcome{
+	position:absolute;
+	top:7%;
+	width:5%;
+	height: auto;
+	right:0%;
+	transform: translateY(-50%);
+	min-width: 18px;	
+}
+#github{
+	 text-align: left; 
+	 margin-right: 10%;
+	width: 10%;
+	height:10%;
+
+}
+#github:hover{
+	background:#b2ffd6;
+	border-radius: 25px;
+
+}
+#twitter{
+	 text-align: center; 
+
+	width: 10%;
+	height:10%;
+
+}
+#twitter:hover{
+	background:#b2ffd6;
+	border-radius: 25px;
+
+}
+#email{
+	 text-align: right;
+	 margin-left: 10%; 
+	width: 10%;
+	height:10%;
+
+}
+#email:hover{
+	background:#b2ffd6;
+	border-radius: 35px;
+
+}
+#filmdoc{
+	position:absolute;
+	left:0%;
+	top:71%;
+	width:100%;
+	height:auto;
+	background:#b7846c;
+	border:2px solid #16704f;
+}
+#bdaydoc{
+	position:absolute;
+	top:100%;
+	left:0%;
+	width:100%;
+	height:auto;
+	background:#b7846c;
+	border:2px solid #16704f;
+}
+#soundDoc{
+	position:absolute;
+	top:128%;
+	left:0%;
+	width:100%;
+	height:auto;
+	background:#b7846c;
+	border:2px solid #16704f;
+}
+#videoDoc{
+	position:absolute;
+	top:156%;
+	left:0%;
+	width:100%;
+	height:auto;
+	background:#b7846c;
+	border:2px solid #16704f;
+}
+a{
+	text-decoration-color: #db8eab;
+	color:#16704f; 
+}
+a:hover{
+	color:#aef9d1;
+}
+
+
+
+#text2 {
+
+/*	position:absolute;
+	top:70%;*/
+	color: #aef9d1;
+	letter-spacing: 2px;
+	font-size:34px;
+	overflow-x: hidden;
+  	overflow-y: auto;
+}
+
+
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: orange; 
+	}
+}
+
+#wel{
+	position:fixed;
+	top:60%;
+	max-width: 40%;
+	font-size: 28px;
+	text-align: center;
+	overflow-x: auto;
+  	overflow-y: auto;
+}
+
+
+
+::selection {
+  background: #1499a0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
