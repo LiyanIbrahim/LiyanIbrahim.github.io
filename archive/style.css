@@ -1,0 +1,250 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster Two);
+
+
+html {
+/*  scroll-behavior: smooth;*/
+  background-color: black;
+/*    overflow: auto;*/
+/*  white-space: nowrap;*/
+  max-width: 500%;
+}
+
+#section1 {
+  height: 600px;
+  color:#e4d5b7;
+font-family: 'Lobster Two';font-size: 50px;
+/*position:absolute;*/
+position: relative;
+/*left:30%;*/
+  position: absolute;
+  left:40%;
+  top:20%;
+/*  margin-left: 10%;*/
+
+/*        margin-left: 20%;*/
+        margin-right: 10%;
+
+}
+#sub{
+/*left:30%;*/
+font-size: 20px;
+color:#4d602a;
+text-decoration: italic;
+  position: absolute;
+  left:23%;
+  top:23%;
+}
+#inst{
+font-size: 30px;
+color:grey;
+text-decoration: italic;
+  position: absolute;
+  left:-100%;
+  top:-10%;
+  margin-top: 0%;
+
+}
+#p1{
+	color:#e4d5b7;
+		font-family: 'Alike Angular';font-size: 20px;
+		text-align: center;
+		word-break: break-all;
+	position: absolute;
+  left:30%;
+  top:75%;
+}
+ #p2{
+	color:#e4d5b7;
+		font-family: 'Alike Angular';font-size: 20px;
+		text-align: center;
+		word-break: break-all;
+	position: absolute;
+  left:30%;
+  top:85%;
+}
+#o1{
+	color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+	text-align: center;
+	position: absolute;
+  	left:5%;
+  	top:110%;	
+  	  background-color: #4d602a; 
+  	    border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+#o2{
+	color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+	text-align: center;
+	position: absolute;
+  	left:25%;
+  	top:110%;
+  	  	  background-color: #4d602a; 
+  	    border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;	
+  border-radius: 10px;
+}
+#o3{
+	color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+	text-align: center;
+	position: absolute;
+  	left:45%;
+  	top:110%;	
+  	  	  background-color: #4d602a; 
+  	    border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+#o4{
+	color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+	text-align: center;
+	position: absolute;
+  	right:20%;
+  	top:110%;	
+  	  	  background-color: #4d602a; 
+  	    border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+#o5{
+	color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+	text-align: center;
+	position: absolute;
+  	right:5%;
+  	top:110%;	
+  	  	  background-color: #4d602a; 
+  	    border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+#bio{
+		color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+text-align: center;
+margin-left: 10%;
+margin-right:10%;
+}
+h3{
+		color:#4d602a;
+	font-family: 'Alike Angular';font-size: 30px;
+text-align: center;	
+}
+#art{
+		color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 20px;
+text-align: center;
+margin-left: 10%;
+margin-right:10%;
+}
+#one{
+color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 30px;
+text-align: center;
+
+}
+#one:hover{
+	color:#4d602a;
+}
+#two{
+color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 30px;
+text-align: center;
+}
+#two:hover{
+	color:#4d602a;
+}
+#three{
+color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 30px;
+text-align: center;
+
+}
+#three:hover{
+	color:#4d602a;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+a{
+	text-decoration: none;
+}
+
+a :hover{
+	text-decoration: none;
+	color:black;
+}
+#four{
+color:#e4d5b7;
+	font-family: 'Alike Angular';font-size: 30px;
+text-align: center;
+
+}
+#linkk{
+	color: #e4d5b7;
+	text-decoration: underline;
+}
+#linkk:hover{
+	color:#580000;
+
+}
+#intro{
+	color:#e4d5b7;
+		font-family: 'Alike Angular';font-size: 30px;
+text-align: left;
+}
+#title1{
+		font-family: 'Alike Angular';font-size: 40px;
+text-align: center;
+	color:#e4d5b7;
+text-decoration: italic;
+
+}
+#quote{
+	font-style:italic;
+	color:#e4d5b7;
+		font-family: 'Alike Angular';font-size: 20px;
+text-align: center;
+margin-right: 10%;
+margin-left: 10%;
+}
+#main{
+	font-style:italic;
+	color:#e4d5b7;
+		font-family: 'Alike Angular';font-size: 20px;	
+		margin-right: 5%;
+margin-left: 5%;
+}
