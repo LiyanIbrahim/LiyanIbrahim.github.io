@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Romance Genre!</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Romance Genre!</h1>
+    <form id="madLibsForm">
+      <!-- Add input fields for horror genre -->
+      <label for="adjective">Adjective:</label>
+      <input type="text" id="adjective" required>
+      
+      <label for="noun">Noun:</label>
+      <input type="text" id="noun" required>
+
+      <!-- Add more input fields as needed -->
+
+      <button type="button" onclick="generateStory('romance')">Submit</button>
+    </form>
+    <div id="storyOutput"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
