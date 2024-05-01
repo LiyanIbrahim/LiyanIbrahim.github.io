@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lqng="en" dir="ltr">
+ <head>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 	 	<link rel="stylesheet" href="style.css"/> 
+ 	<title></title>
+ </head>
+ <body id="mainpage">
+
+<img id="final1" src="final.png">
+
+
+<a href="index.html"><img id="move1"src="w1.png"></a>
+<p id="text1"> Resistance on Canvas </p>
+<p id="subtext"> Canvas, Fabric, Wood, Metal, Paper</p>
+
+
+
+
+
+
+ </body>
+<!--  <script src="script3.js"> </script> -->
+<script> 
+  // Get the image element
+var boxImage = document.getElementById('final1');
+// Define an array of image sources
+var imageSources = ['final1.png', 'final.png' ];
+var currentImageIndex = 0;
+
+// Add click event listener to the anchor tag
+boxImage.addEventListener('click', function() {
+  // Change the source image of the boxImage
+  boxImage.src = imageSources[currentImageIndex];
+  // Increment currentImageIndex and loop back to 0 if it exceeds the length of imageSources
+  currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+});
+</script>
+</html>
