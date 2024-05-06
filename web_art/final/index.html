@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="mute.png">
+
+  <title>Exile is a hard Job</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="page1">
+	<img id="muted" src="mute.png">
+	<img id="logo" src="logo.png">
+	<img id="pic1" src="pic1.png">
+	<img id="pic2" src="pic2.png">
+	<img id="pic3" src="pic3.png">
+	<img id="pic4" src="pic4.png">
+
+	<a href="story.html"><button id="sub"  type="button">Subscribe</button></a>
+  <script>
+const muteButton = document.getElementById('muted');
+    let isMuted = true;
+const logo=document.getElementById('logo');
+const pic1=document.getElementById('pic1');
+const pic2=document.getElementById('pic2');
+const pic3=document.getElementById('pic3');
+const pic4=document.getElementById('pic4');
+
+const button=document.getElementById('sub');
+
+    muteButton.addEventListener('click', function() {
+        if (isMuted) {
+            muteButton.src = 'unmute.png';
+            logo.src="newlogo.png";
+            pic1.src="newpic1.png";
+            pic2.src="newpic2.png";
+            pic3.src="newpic3.png";
+            pic4.src="newpic4.png";
+        } else {
+            muteButton.src = 'mute.png';
+            logo.src="logo.png";
+            pic1.src="pic1.png";
+            pic2.src="pic2.png";
+            pic3.src="pic3.png";
+            pic4.src="pic4.png";
+        }
+        isMuted = !isMuted;
+    });
+setInterval(myTimer, 7000);
+
+function myTimer() {
+	button.style.display="inline-block";
+
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>read, hover, click and explore me</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="birdf.png">
+</head>
+<body id="room1">
+
+<!-- // overlapping text/QR codes -->
+<a href="rose.html"><img id="rose"src="rose.png"> </a>
+<a href="text.html"><img id="hands"src="hands.png"> </a>
+
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+<img class="war" src="war.png">
+
+<div class="container">
+  <div class="text"></div>
+</div>
+
+  <script >
+  	// TextScramble
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.update = this.update.bind(this);
+  }
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '';
+      const to = newText[i] || '';
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let output = '';
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="dud">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+// Example
+const phrases = [
+  'if',
+  'olive trees',
+    'لو يذكر',
+  "knew the hands ",
+   ' الزيتون غارسهُ ',
+  'that planted them',
+  "their oil would become",
+  'would become',
+  'tears',
+  "لصار الزيت دمعا ",
+
+];
+
+const el = document.querySelector('.text');
+const fx = new TextScramble(el);
+
+let counter = 0;
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 800);
+  });
+  counter = (counter + 1) % phrases.length;
+};
+
+next();
+
+
+// Get all war images
+  const warImages = document.querySelectorAll('.war');
+
+  // Function to position images randomly
+  function positionImagesRandomly() {
+    warImages.forEach(image => {
+      const randomX = Math.random() * (window.innerWidth - image.clientWidth);
+      const randomY = Math.random() * (window.innerHeight - image.clientHeight);
+      image.style.left = `${randomX}px`;
+      image.style.top = `${randomY}px`;
+    });
+  }
+
+  // Position images randomly initially
+  positionImagesRandomly();
+
+  // Function to show images one by one
+  function showNextWarImage() {
+    let currentIndex = 0;
+    const showImageInterval = setInterval(() => {
+      if (currentIndex < warImages.length) {
+        warImages[currentIndex].style.display = 'inline'; // Show the next image
+        currentIndex++;
+      } else {
+        clearInterval(showImageInterval); // Stop interval when all images are shown
+      }
+    }, 600); // Adjust the timing as needed
+  }
+
+  // Event listener for hover on hands image
+  document.getElementById('hands').addEventListener('mouseenter', () => {
+    showNextWarImage(); // Start showing images
+  });
+
+
+  // Event listener for mouse leave on hands image (optional: to hide images when mouse leaves)
+  document.getElementById('hands').addEventListener('mouseleave', () => {
+    warImages.forEach(image => {
+      image.style.display = 'none'; // Hide all images
+    });
+  });
+  </script>
+</body>
+</html>
