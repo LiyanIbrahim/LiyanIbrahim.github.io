@@ -1,141 +1,301 @@
 <!DOCTYPE html>
-<html lqng="en" dir="ltr">
- <head>
- 	<meta charset="utf-8">
- 	 	<link rel="stylesheet" href="style.css"/> 
-    <link rel="shortcut icon" href="favicon.png">
- 	<title></title>
- </head>
- <body id="projectspage">
-<!-- Project links -->
-<a href="index.html">
-<img id="logo" src="logo.png">
-</a>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Projects — Liyan Ibrahim</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<div id="typecontainer">
-  <div id="typetext"></div><div id="cursor"></div>
-</div>
-<!-- <div class="typewriter">
-    <h1>TWe live in this digitized world where people talk more but say less. Growing up with a mainly STEM education, the emphasis on art around me was very limited. I was learning how to write these algorithms and understand how a computer works while simultaneously reading about how these black box technologies are amplifying the inequalities in the world. All while growing up with the internet - and watching interactions become progressively more digital, yet less stimulating. This made me increasingly more interested in looking at how digital literacy changes the way we interact with the technologies that influence the world around us. Discovering the field where art and technology are not mutually exclusive, I started reevaluating art through a different lens. To me, art is fluid and extensive; it’s everywhere, it navigates through societal borders and barriers and communicates ideas and expressions in a way no other medium can.
+    body#projectspage {
+      background: #000;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      padding-top: 0;
+    }
 
-I find it hard to isolate my areas of interest since interactive media practice is very interconnected - which is why I consider myself an interaction designer and digital storyteller. My work ranges from using data to create interactive maps that help people interpret data visually to digital storytelling pieces exploring themes of social good and activism. I create these interactive pieces because it allows me to immerse myself and the users into these digital tools that are perceived as foreign while exploring ideas, themes and stories that are actually familiar to us. As living online increasingly becomes the norm, my work explores ways in which the internet/digital entertainment environments could be used as means of activism and education about what is happening in the world.
+    #logo-link {
+      z-index: 10;
+    }
 
-My work also explores ways in which technology impacts and designs our behaviors, views and thoughts. I want my work to globalize and decolonize art and technology and raise awareness of global issues in an accessible, informative and engaging way to provoke change on a global scale..</h1>
-</div> -->
+    #typecontainer {
+      position: fixed;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      z-index: 10;
+    }
 
-<div class="row">
-  <div class="left-column">
+    #typecontainer #typetext {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: white;
+    }
 
+    #typecontainer #cursor {
+      height: 14px;
+      width: 2px;
+      background-color: white;
+    }
+
+    /* ── Carousel ── */
+    #carousel {
+      position: relative;
+      width: 100%;
+      height: 58vh;
+      perspective: 1000px;
+      overflow: visible;
+    }
+
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 360px;
+      height: 240px;
+      margin-top: -120px;
+      margin-left: -180px;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      will-change: transform, opacity;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity  0.45s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* ── Info bar ── */
+    #info {
+      margin-top: 36px;
+      text-align: center;
+      height: 52px;
+      pointer-events: none;
+    }
+
+    #info-title {
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 0.07em;
+      transition: opacity 0.25s ease;
+    }
+
+    #info-sub {
+      margin-top: 7px;
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      transition: opacity 0.25s ease;
+    }
+
+
+    #hint {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #2a2a2a;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body id="projectspage">
+
+  <a href="index.html"><img id="logo" src="logo.png" alt="home"></a>
+
+  <div id="typecontainer">
+    <div id="typetext"></div><div id="cursor"></div>
   </div>
-  <div class="middle-column">
 
+  <div id="carousel" style="margin-top: 0;"></div>
 
-<a href="warlove.html">
-   <img id="war"style="display:inline"src="lovewar.jpg">
-   <img id="warhover" style="display:none" src="lovewarhover.jpg">
-</a>
-
- <a href="home.html">
-   <img id="home1"style="display:inline"src="home1.png">
-   <img id="homehover" style="display:none" src="homehover.png">
-</a>
-
-<!-- <a href="AR.html">
-    <img id="nyc" style="display:inline" src="ar.png">
-    <img id="nychover" style="display: none" src="arHover.png">
-</a> -->
-<a href="airplaneredesign.html">
-   <img id="delta"style="display:inline"src="delta1.png">
-   <img id="deltahover" style="display:none" src="deltahover.png">
-</a>
-  <a href="expressivewords.html">
-   <img id="expressive"style="display:inline"src="vl.png">
-   <img id="expressivehover" style="display:none" src="vlhover.png">
-</a>
-    <a href="onNewRealities.html">
-   <img id="capstone"style="display:inline"src="capstone1.png">
-   <img id="capstonehover" style="display:none" src="capstonehover.png">
-</a>
-
-<!-- 	<a href="amplifier.html">
-    <img id="cb" style="display:inline" src="cb.png">
-    <img id="cbHover" style="display:none" src="cbhover.png">
-</a> -->
-<!--     <img id="folder" src="folder.png"> -->
-<!-- <a href="guide.html">
-    <img id="uim1" style="display:inline" src="uim1.png">
-    <img id="uimHover" style="display: none" src="uimhover.png">
-</a> -->
-
-	<a href="video.html">
-    <img id="video" style="display:inline" src="video.png">
-    <img id="videoHover" style="display:none" src="videohover.png">
-</a>
-<a href="comic.html">
-    <img id="comic" style="display:inline" src="comic.png">
-    <img id="comicHover" style="display: none" src="comicHover.png">
-</a>
-
-
-  </div>
-  <div class="right-column">
-
-<!--         <a href="expressivewords.html">
-   <img id="express"style="display:inline"src="express1.png">
-   <img id="expresshover" style="display:none" src="expresshover.png">
-</a> -->
-<a href="people.html">
-    <img id="people" style="display:inline" src="people.png">
-    <img id="peoplehover" style="display:none"  src="peoplehover.png">
-</a>
-
-          <a href="songs.html">
-   <img id="songs2"style="display:inline"src="song.jpg">
-   <img id="songshover" style="display:none" src="songhover.jpg">
-</a>
-          <a href="frictions.html">
-   <img id="frictions"style="display:inline"src="frictions.png">
-   <img id="frictionshover" style="display:none" src="frictionshover.png">
-</a>
-      <a href="censorship.html">
-   <img id="censorship"style="display:inline"src="reality.png">
-   <img id="censorshiphover" style="display:none" src="realityHover.png">
-</a>
-          <a href="beyondbeauty.html">
-   <img id="beyond"style="display:inline"src="beyond1.png">
-   <img id="beyondhover" style="display:none" src="beyondhover.png">
-</a>
-      <a href="bloodymary.html">
-   <img id="mary"style="display:inline"src="mary.png">
-   <img id="maryhover" style="display:none" src="maryhover.png">
-</a>
-
-<!--  	<a href="lessonindrawing.html">
-    <img id="pr" style="display:inline" src="PR.png">
-    <img id="prHover" style="display:none" src="prhover.png">
-</a> -->
-
-
-<!--     <img id="folder" src="folder.png"> -->
-    <a href="opengulf.html">
-   <img id="folder1"style="display:inline"src="opengulf1.png">
-   <img id="opengulf" style="display:none" src="opengulfhover.png">
-</a>
+  <div id="info">
+    <p id="info-title"></p>
+    <p id="info-sub"></p>
   </div>
 
-<!-- left bottom  -->
-<!--   <div class="column"> -->
-<!--     <img id="video" style="display:inline" src="video.png">
-    <img id="videoHover" style="display:none" src="videohover.png"> -->
-<!--     <img id="folder" src="folder.png"> -->
-<!--     <img id="folder" src="folder.png">
-    <img id="folder" src="folder.png"> -->
-<!--   </div> -->
-</div>
+
+  <script src="script.js"></script>
+  <p id="hint">drag · ← → &nbsp;&nbsp;·&nbsp;&nbsp; click to open</p>
+
+  <script>
+    const PROJECTS = [
+      { title: "Style Transfer",                           sub: "AI · Visual Storytelling",             img: "styletransfer.png",  url: "styletransfer.html"    },
+      { title: "حرب/حب  (War / Love)",                    sub: "Web Art",                              img: "lovewar.jpg",         url: "warlove.html"          },
+      { title: "When Home Won't Let You Stay",             sub: "Interactive Experience · Game Design", img: "home1.png",           url: "home.html"             },
+      { title: "On New Realities",                         sub: "Capstone",                             img: "capstone1.png",       url: "onNewRealities.html"   },
+      { title: "Frictions",                                sub: "Installation · Projection Mapping",    img: "frictions.png",       url: "frictions.html"        },
+      { title: "Patterns of Love",                         sub: "Twine · Python",                       img: "people.png",          url: "people.html"           },
+      { title: "I Want to Sing, But I Don't Know Any Songs", sub: "Web Art",                            img: "song.jpg",            url: "songs.html"            },
+      { title: "Create Your Own Reality",                  sub: "Product Design · AI",                  img: "reality.png",         url: "censorship.html"       },
+      { title: "Beyond Beauty",                            sub: "Speculative Design · 3D Animation",    img: "beyond1.png",         url: "beyondbeauty.html"     },
+      { title: "Bloody Mary",                              sub: "Physical Computing · Storytelling",    img: "mary.png",            url: "bloodymary.html"       },
+      { title: "OpenGulf",                                 sub: "Data Visualization",                   img: "opengulf1.png",       url: "opengulf.html"         },
+      { title: "How to Make a Human Being?",               sub: "Video",                                img: "video.png",           url: "video.html"            },
+      { title: "Expressive Words",                         sub: "Graphic Design · Typography",          img: "vl.png",              url: "expressivewords.html"  },
+      { title: "Delta Redesign",                           sub: "UX / UI Design",                       img: "delta1.png",          url: "airplaneredesign.html" },
+      { title: "Comic Strip",                              sub: "Illustration",                         img: "comic.png",           url: "comic.html"            },
+    ];
+
+    const track = document.getElementById('carousel');
+    const titleEl = document.getElementById('info-title');
+    const subEl   = document.getElementById('info-sub');
+
+    // Build cards
+    PROJECTS.forEach((p, i) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.i  = i;
+      const img = document.createElement('img');
+      img.src = p.img;
+      img.alt = p.title;
+      card.appendChild(img);
+      card.addEventListener('click', () => {
+        if (i === current) {
+          sessionStorage.setItem('lastProjectIdx', i);
+          window.location.href = p.url;
+        } else {
+          animateTo(i);
+        }
+      });
+      track.appendChild(card);
+    });
+
+    const cards = [...track.querySelectorAll('.card')];
+
+    // ── Layout config ──────────────────────────────────────────────────
+    // offset: how many steps from center
+    // returns {x, rotY, scale, opacity}
+    function getStyle(offset) {
+      const abs = Math.abs(offset);
+      if (abs > 4) return null;
+
+      const sign  = offset < 0 ? -1 : offset > 0 ? 1 : 0;
+      const steps = [
+        { x:    0, rotY:   0, scale: 1.00, opacity: 1.00 },  // 0 (center)
+        { x:  310, rotY: -50, scale: 0.80, opacity: 0.70 },  // 1
+        { x:  540, rotY: -58, scale: 0.64, opacity: 0.40 },  // 2
+        { x:  700, rotY: -62, scale: 0.52, opacity: 0.20 },  // 3
+        { x:  820, rotY: -65, scale: 0.44, opacity: 0.08 },  // 4
+      ];
+      const s = steps[abs];
+      return { x: s.x * sign, rotY: s.rotY * sign, scale: s.scale, opacity: s.opacity };
+    }
+
+    // ── State ──────────────────────────────────────────────────────────
+    let current  = 0;
+    let animCur  = 0;       // fractional, for smooth animation
+    let rafId    = null;
+
+    function applyStyles(fracIdx) {
+      cards.forEach((card, i) => {
+        const offset = i - fracIdx;
+        const abs    = Math.abs(offset);
+
+        if (abs > 4.5) {
+          card.style.opacity   = '0';
+          card.style.transform = 'translateX(-9999px)';
+          card.style.zIndex    = '0';
+          return;
+        }
+
+        // Interpolate between integer positions
+        const lo = Math.floor(offset), hi = Math.ceil(offset);
+        const t  = offset - lo;
+        const sLo = getStyle(lo) || getStyle(Math.sign(lo) * 4);
+        const sHi = getStyle(hi) || getStyle(Math.sign(hi) * 4);
+
+        const x       = lerp(sLo.x,       sHi.x,       t);
+        const rotY    = lerp(sLo.rotY,    sHi.rotY,    t);
+        const scale   = lerp(sLo.scale,   sHi.scale,   t);
+        const opacity = lerp(sLo.opacity, sHi.opacity, t);
+
+        card.style.opacity   = opacity;
+        card.style.zIndex    = String(Math.round(100 - abs * 10));
+        card.style.transform =
+          `translateX(${x}px) rotateY(${rotY}deg) scale(${scale})`;
+      });
+    }
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function updateInfo() {
+      titleEl.textContent = PROJECTS[current].title;
+      subEl.textContent   = PROJECTS[current].sub;
+    }
+
+    function animateTo(target) {
+      target  = Math.max(0, Math.min(PROJECTS.length - 1, target));
+      current = target;
+      updateInfo();
+      if (rafId) cancelAnimationFrame(rafId);
+      tick();
+    }
+
+    function tick() {
+      animCur = lerp(animCur, current, 0.14);
+      applyStyles(animCur);
+      if (Math.abs(animCur - current) > 0.004) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        animCur = current;
+        applyStyles(animCur);
+        rafId = null;
+      }
+    }
 
 
-<script src="script.js"> </script>
+    // ── Input: keyboard ────────────────────────────────────────────────
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  animateTo(current + 1);
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    animateTo(current - 1);
+      if (e.key === 'Enter') window.location.href = PROJECTS[current].url;
+    });
 
- </body>
+    // ── Input: drag ────────────────────────────────────────────────────
+    let dragX = null, dragStart = null;
+    const onDown = x => { dragX = x; dragStart = current; };
+    const onMove = x => {
+      if (dragX === null) return;
+      const delta = Math.round((dragX - x) / 160);
+      if (delta !== 0) animateTo(dragStart + delta);
+    };
+    const onUp   = () => { dragX = null; };
 
+    track.addEventListener('mousedown',  e => onDown(e.clientX));
+    window.addEventListener('mousemove', e => onMove(e.clientX));
+    window.addEventListener('mouseup',   onUp);
+    track.addEventListener('touchstart', e => onDown(e.touches[0].clientX), { passive: true });
+    window.addEventListener('touchmove', e => onMove(e.touches[0].clientX), { passive: true });
+    window.addEventListener('touchend',  onUp);
+
+    // ── Init ───────────────────────────────────────────────────────────
+    const savedIdx = parseInt(sessionStorage.getItem('lastProjectIdx') || '0', 10);
+    current = isNaN(savedIdx) ? 0 : Math.max(0, Math.min(PROJECTS.length - 1, savedIdx));
+    animCur = current;
+    applyStyles(current);
+    updateInfo();
+  </script>
+</body>
 </html>

@@ -12,9 +12,6 @@ let finalindex=document.getElementById('finalIndex');
 
 let mainpagecolor=document.getElementById('mainpage');
 
-function myFunction() {
-  alert("welcome to my portfolio! it works better (& is more impressive) on a desktop!");
-}
 
 // //opengulf 
 // opengindex.addEventListener('mouseenter', event =>{

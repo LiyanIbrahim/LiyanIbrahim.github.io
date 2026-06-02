@@ -264,19 +264,19 @@ header{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     margin-top: 70px;
     margin-bottom: 20px;
-    gap: 40px; /* Increased spacing between image and bio */
+    padding-left: 60px;
+    gap: 40px;
 }
 
 #aboutpage #liyanphoto {
-    width: 300px;  /* Default size */
+    width: 300px;
     height: auto;
     border-radius: 10px;
     flex-shrink: 0;
-    margin-left: -70px; /* Moves image further to the left */
 }
 
 #aboutpage #bio {
@@ -366,44 +366,45 @@ header{
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  padding: 0 40px;
   padding-top: 30px;
+  gap: 0;
 }
 
-/* Three columns setup */
 .left-column {
-  flex: 0%; /* Adjust as needed, almost half the size */
-  max-width: 35%; /* Adjust as needed */
-  padding: 0 0px;
+  display: none;
 }
 
 .middle-column,
 .right-column {
-  flex: 50%; /* Equal sizes for middle and right columns */
-  max-width: 50%; /* Adjust as needed */
-  padding: 0 4px;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 12px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
 }
-.middle-column img{
-	  margin-top: 8px;
-  vertical-align: middle;
-/*  width: 100%;*/
-  	width:80%;
-	margin-left: 10%;
-	margin-top: 30px;
+
+/* Project card hover title overlay */
+.project-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 24px;
 }
-.right-column img {
-  margin-top: 8px;
-  vertical-align: middle;
-/*  width: 100%;*/
-  	width:80%;
-	margin-left: 10%;
-	margin-top: 30px;
+
+.project-card a {
+  display: block;
+  position: relative;
 }
+
+.project-card a img {
+  width: 100%;
+  display: block;
+}
+
 
 /* For screens between 601px and 800px */
 @media screen and (max-width: 800px) {
@@ -428,10 +429,9 @@ header{
 /* Add additional mobile-specific styling here */
 #logo {
   position: absolute;
-
-  width: 10%; /* Adjust the size for better visibility on smaller screens */
+  width: 10%;
   top: 3%;
-  left: 0%;
+  left: 2%;
 }
 
 #back {
@@ -492,6 +492,176 @@ header{
 }
 */
 /*---------------------------------------------------SEPERATE PAGES------------------------------------------------------*/
+
+/* ============================================================
+   UNIFIED PROJECT PAGE LAYOUT
+   Shared structure — colors overridden per body ID below
+   ============================================================ */
+
+.proj-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  margin-top: 55px;
+  margin-bottom: 0;
+  padding: 0 10%;
+  line-height: 1.25;
+}
+
+.proj-subtitle {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.08em;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  padding: 0 10%;
+}
+
+.proj-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 8%;
+  margin: 28px 0;
+}
+
+.proj-images img,
+.proj-images video {
+  max-height: 52vh;
+  width: auto;
+  max-width: 100%;
+  border-radius: 3px;
+  display: block;
+}
+
+.proj-images img.proj-img-full {
+  width: 55%;
+  height: auto;
+  max-height: none;
+}
+
+.proj-content {
+  text-align: center;
+  padding: 0 20%;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.proj-content p + p {
+  margin-top: 12px;
+}
+
+.proj-content:last-child {
+  margin-bottom: 120px;
+}
+
+.proj-collab {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  opacity: 0.65;
+}
+
+.proj-list {
+  list-style: none;
+  padding: 0 20%;
+  margin: 0 0 120px;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.proj-list li {
+  display: block;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.proj-list li::before {
+  content: none;
+}
+
+.proj-link {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s;
+}
+
+.proj-link:hover { opacity: 0.65; }
+
+/* ── Per-page title / subtitle color overrides ── */
+#war .proj-title         { color: #8B0000; }
+#war .proj-subtitle      { color: #c87c8a; }
+#war .proj-link          { color: #8B0000; border-bottom-color: #8B0000; }
+#war .proj-link:hover    { color: #c87c8a; }
+
+#home .proj-title        { color: #808080; }
+#home .proj-subtitle     { color: #E37383; }
+
+#people .proj-title      { color: white; }
+#people .proj-subtitle   { color: rgba(0,0,0,0.55); }
+
+#songs1 { background-color: #D9D9D9; }
+#songs1 .proj-title      { color: #FFB6C1; }
+#songs1 .proj-subtitle   { color: rgba(0,0,0,0.55); }
+#songs1 .proj-content    { color: black; }
+
+#frictions .proj-title   { color: white; }
+#frictions .proj-subtitle{ color: #FDDA0D; }
+#frictions .proj-content { color: white; }
+#frictions .proj-list    { color: white; }
+#frictions .proj-collab  { color: white; }
+
+#censpage .proj-title    { color: #3a3a3a; }
+#censpage .proj-subtitle { color: #7b8f82; }
+
+#bloodymary .proj-title  { color: #3a3a3a; }
+#bloodymary .proj-subtitle { color: #7b8f82; }
+
+#BeyondBeauty .proj-title    { color: #5A5A5A; }
+#BeyondBeauty .proj-subtitle { color: #E0218A; }
+
+#ar .proj-title          { color: #1a1a1a; }
+#ar .proj-subtitle       { color: #bf0c17; }
+
+#expressive .proj-title  { color: black; }
+#expressive .proj-subtitle { color: #808080; }
+
+#capstonepage .proj-title    { color: #3a3a3a; }
+#capstonepage .proj-subtitle { color: #1DA1F2; }
+
+#opengulfpage .proj-title    { color: white; }
+#opengulfpage .proj-subtitle { color: #CAA27E; }
+#opengulfpage .proj-content  { color: white; }
+
+#videopage .proj-title    { color: #7aa3e8; }
+#videopage .proj-subtitle { color: #e889e7; }
+#videopage .proj-content  { color: #4a4a4a; }
+#videopage .proj-list     { color: #4a4a4a; }
+
+#comicpage .proj-title    { color: #7d75b1; }
+#comicpage .proj-subtitle { color: #5d4b4b; }
+#comicpage .proj-content  { color: #5a3a3a; }
+
+#delta .proj-title    { color: #1a1a1a; }
+#delta .proj-subtitle { color: #003366; }
+
+#styletransferpage { background-color: #12111e; color: #e0dff0; font-family: Arial, sans-serif; }
+#styletransferpage .proj-title    { color: #9b8ec4; }
+#styletransferpage .proj-subtitle { color: #e8a8c8; }
+#styletransferpage .proj-content  { color: #e0dff0; }
+#styletransferpage .proj-list     { color: #e0dff0; }
+/* ============================================================ */
 #titleOpengulf{
 	text-align: center;
 	font-size:40px;
