@@ -530,6 +530,10 @@ header{
   margin: 28px 0;
 }
 
+.proj-images:last-child {
+  margin-bottom: 320px;
+}
+
 .proj-images img,
 .proj-images video {
   max-height: 52vh;
@@ -559,7 +563,15 @@ header{
 }
 
 .proj-content:last-child {
-  margin-bottom: 120px;
+  margin-bottom: 320px;
+}
+
+/* Reliable bottom padding for all project pages */
+#war, #home, #people, #songs1, #frictions, #censpage,
+#BeyondBeauty, #bloodymary, #ar, #expressive, #capstonepage,
+#opengulfpage, #videopage, #comicpage, #delta,
+#styletransferpage, #lewiscapaldipage, #artifactspage, #howtobesadpage {
+  padding-bottom: 500px;
 }
 
 .proj-collab {
