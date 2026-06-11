@@ -18,11 +18,26 @@
   </div>
 
   <div class="proj-content">
-    <p>An AI-native workflow for applying cinematic style transfer to storyboard sketches and production assets. Built using node-based generative pipelines, the system takes a line drawing as input and uses reference photographs to synthesize a fully rendered, stylistically coherent image—translating visual mood, lighting, and color from real-world cinematography onto conceptual artwork.</p>
-    <br>
-    <p>The workflow was developed as a production tool for visual storytelling, enabling rapid iteration between concept art and photorealistic output. By feeding multiple reference images into the pipeline, the system blends stylistic qualities—extracting atmospheric lighting, color grading, and textural depth—and applies them to source sketches in a single pass.</p>
-    <br>
-    <p>This project sits at the intersection of creative production and AI systems design, exploring how generative tools can accelerate the visual development process without replacing the artist's intent.</p>
+    <p>An AI-native workflow for applying cinematic style transfer to storyboard sketches and production assets. Built using node-based generative pipelines, the system takes a line drawing as input and uses reference photographs to synthesize a fully rendered, stylistically coherent image — translating visual mood, lighting, and color from real-world cinematography onto conceptual artwork.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">The Problem with Default AI Aesthetics</p>
+    <p>The most persistent failure mode of AI image generation is aesthetic homogenization. Left to its own defaults, most generative models trend toward the same output: soft gradients, hyper-saturated color, smooth plastic skin, and a compositional cleanliness that reads — regardless of the prompt — as Pixar-adjacent. Ask for "cinematic war photography" and you get something that looks like a polished game cinematic. Ask for "gritty documentary" and you get something that looks like a Netflix title card.</p>
+    <p>This isn't a prompt problem. It's a training distribution problem. Models are trained on vast amounts of commercially produced, aesthetically normalized imagery. The result is a strong gravitational pull toward a particular visual register: high production value, legible, and generic. For artists working in specific visual traditions — hand-drawn animation, documentary photography, experimental film, graphic novels — this default aesthetic actively fights against what the work is trying to say.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Style Transfer as Aesthetic Control</p>
+    <p>The workflow developed here approaches style not as a prompt instruction but as a direct visual input. Rather than describing a style in language and hoping the model interprets it correctly, the pipeline feeds an actual reference image — a frame of film, a photograph, a painting — and conditions the output on that specific visual document.</p>
+    <p>This distinction matters enormously in practice. The difference between "gritty 1970s war photography" as a text prompt and a direct frame from a Haskell Wexler film as a reference image is the difference between an approximation and a source. The model is no longer inferring what the style might look like — it is extracting the actual lighting ratios, color temperature, grain structure, and compositional density from a specific visual artifact and applying those qualities to a new input.</p>
+    <p>The result is a level of stylistic precision that text-to-image generation cannot achieve: outputs that genuinely inherit the aesthetic logic of the reference rather than a model's averaged interpretation of a genre.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">What This Enables</p>
+    <p>For production workflows, the practical implication is that visual identity becomes controllable and repeatable. A director working in a specific cinematographic tradition can lock a reference aesthetic early in development and apply it consistently across an entire storyboard sequence. Concept art, animatics, and final frames can share a coherent visual language from the earliest stage of production rather than converging on it through rounds of revision.</p>
+    <p>More broadly, this gives artists a way to work against the grain of what AI naturally wants to produce. The Pixar gravity is strong — but it's not inevitable. With the right pipeline architecture, AI generation becomes a tool for realizing specific, idiosyncratic aesthetic visions rather than a machine for producing polished generic output.</p>
   </div>
 <div style="height:50px;"></div>
 </body>

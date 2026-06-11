@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Trace — Liyan Ibrahim</title>
+  <style>
+    #tracepage {
+      background-color: #0d0d0d;
+      color: #c8c8c8;
+      font-family: Arial, sans-serif;
+    }
+    #tracepage .proj-title    { color: #ffffff; }
+    #tracepage .proj-subtitle { color: #4a7c59; }
+    #tracepage .proj-content  { color: #c8c8c8; }
+    #tracepage .proj-content p { margin-bottom: 10px; }
+    #tracepage .proj-link     { color: #5a9e6f; border-bottom-color: #5a9e6f; }
+    #tracepage .proj-link:hover { color: #7abf8a; }
+    #tracepage #back { filter: invert(1) brightness(0.5); }
+    #tracepage .proj-section-label { color: #4a7c59; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+
+  </style>
+</head>
+<body id="tracepage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">Trace</h1>
+  <p class="proj-subtitle">Design Engineering · AI · Next.js · TypeScript · Tailwind</p>
+
+  <div class="proj-images">
+    <a href="https://trace-three-eta.vercel.app/" target="_blank">
+      <img src="traceimage.png" alt="Trace" style="max-height: 60vh; cursor: pointer; display: block;">
+    </a>
+  </div>
+
+  <div class="proj-content">
+    <p><a class="proj-link" href="https://trace-three-eta.vercel.app/" target="_blank">View live →</a></p>
+  </div>
+
+  <div class="proj-content">
+    <p>Trace is a design engineering prototype exploring how AI-assisted financial decisions can be made more transparent, understandable, and trustworthy.</p>
+    <p>As AI systems become increasingly embedded in financial workflows, users are often asked to approve recommendations without understanding how they were generated. In high-trust environments involving budgets, compliance, and company spend, this lack of visibility can quickly erode confidence. The challenge isn't simply building more capable AI systems—it's designing interfaces that help people understand what the AI is doing, why it made a recommendation, and when human intervention is needed.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">The Problem</p>
+    <p>Enterprise expense management is fundamentally a trust problem.</p>
+    <p>Finance teams review hundreds of transactions, approvals, and policy decisions every week. AI can help categorize expenses, identify risk, and automate routine reviews, but only if users understand the reasoning behind those recommendations. Too much automation creates opacity. Too much information creates cognitive overload.</p>
+    <p>The challenge becomes finding the right balance between efficiency and oversight.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Design Approach</p>
+    <p>Trace was designed around the idea of making AI less of a black box.</p>
+    <p>Rather than exposing raw model outputs, confidence calculations, or technical implementation details, the interface translates agent activity into human-readable reasoning. Policy checks, historical transaction patterns, vendor history, and risk signals are surfaced in a way that supports fast decision-making while preserving accountability.</p>
+    <p>The product follows a "calm by default, deep on demand" philosophy. Users can quickly process routine transactions while accessing detailed reasoning, audit trails, and supporting evidence only when needed.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">AI Transparency & Trust</p>
+    <p>One of the core design questions behind Trace was: how do you show what an AI system is doing without overwhelming users?</p>
+    <p>Instead of focusing on prompts, model outputs, or token-level explanations, Trace focuses on the information users actually need to make a decision: why was this recommendation made, what evidence supports it, what risks were identified, what can be overridden, and what happened before this decision was reached.</p>
+    <p>The goal is not complete visibility into every model decision, but meaningful transparency that helps users act with confidence.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Design & Interaction</p>
+    <p>The interface prioritizes information hierarchy, progressive disclosure, and trust-oriented interaction design.</p>
+    <p>Key decisions included keeping AI reasoning secondary until requested, presenting recommendations before technical details, designing audit trails as supporting context rather than primary content, using status, risk, and confidence indicators to reduce cognitive load, and supporting both quick approvals and deep investigation workflows.</p>
+    <p>The result is an interface that feels more like reviewing a decision than operating a dashboard.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Technology</p>
+    <p>Built with Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion. Developed using an AI-native workflow with Cursor and Claude, leveraging AI to accelerate implementation while allowing design decisions, interaction patterns, and system architecture to remain intentionally human-directed.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Reflection</p>
+    <p>Trace began as an exploration of financial review workflows but ultimately became an investigation into AI trust.</p>
+    <p>As AI agents take on more responsibility in high-stakes domains, the interfaces around them become just as important as the models themselves. This project explores how thoughtful interaction design can bridge the gap between automation and human judgment, making AI-assisted decisions feel inspectable, understandable, and trustworthy.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+</body>
+</html>

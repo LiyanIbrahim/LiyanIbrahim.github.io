@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Storyboarding at Scale — Liyan Ibrahim</title>
+  <style>
+    #storyboardpage {
+      background-color: #0f0f0d;
+      color: #bfbcb5;
+      font-family: Arial, sans-serif;
+    }
+    #storyboardpage .proj-title    { color: #f0ede6; }
+    #storyboardpage .proj-subtitle { color: #7a7055; }
+    #storyboardpage .proj-content  { color: #bfbcb5; }
+    #storyboardpage .proj-content p { margin-bottom: 10px; }
+    #storyboardpage .proj-link     { color: #a09060; border-bottom-color: #a09060; }
+    #storyboardpage .proj-link:hover { color: #c4b07a; }
+    #storyboardpage #back          { filter: invert(1) brightness(0.5); }
+    #storyboardpage .proj-section-label {
+      color: #7a7055;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    #storyboardpage .proj-images img {
+      border: 1px solid #1e1c18;
+    }
+  </style>
+</head>
+<body id="storyboardpage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">Storyboarding at Scale with ComfyUI</h1>
+  <p class="proj-subtitle">ComfyUI · Storyboard Generation · Frame Extraction · Production Automation</p>
+
+  <div class="proj-images">
+    <img src="sb1.png" alt="Storyboard contact sheet" style="max-height: 65vh;">
+  </div>
+
+  <div class="proj-content">
+    <p>After testing most of the major image generation platforms for storyboarding and visual development, a recurring problem became clear: these tools are optimized for producing a single beautiful image, not for the realities of production workflows. A common approach for storyboarding is generating contact sheets or image grids. They are fast to review and let you explore multiple shot ideas in a single generation. The problem starts after generation is complete.</p>
+    <p>Most platforms output a single grid image, which means every frame has to be manually cropped, separated, renamed, and organized before it can actually be used in a storyboard. On larger projects this quickly becomes repetitive, time-consuming work that adds friction to the creative process. The generation is the easy part. The cleanup is where the time goes.</p>
+  </div>
+
+  <div class="proj-images">
+    <img src="sb2.png" alt="Storyboard frames" style="max-width: 900px; width: 100%;">
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Workflow</p>
+    <p>That led to building a ComfyUI workflow focused specifically on storyboard generation and extraction. The workflow generates storyboard-style contact sheets from prompts and references, automatically separates the resulting frames, preserves image quality, and outputs production-ready storyboard panels without requiring manual cropping. By moving the process into ComfyUI, the workflow gains significantly more control over generation parameters, prompt structure, reference conditioning, and downstream processing than any commercial platform allows.</p>
+    <p>What started as a quality-of-life fix became a useful production tool. Instead of treating image generation as the final output, the workflow treats it as one step in a larger storytelling pipeline, reducing manual production work and enabling faster iteration across multiple concepts and shot sequences.</p>
+  </div>
+
+  <div class="proj-images">
+    <img src="sb3.png" alt="Storyboard output panels" style="max-width: 900px; width: 100%;">
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Testing at the Edges</p>
+    <p>I was also interested in testing models under conditions that are difficult to evaluate on commercial platforms. This included large crowd scenes, highly detailed cinematic compositions, public figure references, complex staging, and edge cases where platform-level restrictions make it hard to understand what a model is actually capable of.</p>
+    <p>For example, I used images of Taylor Swift alongside prompts involving large-scale crowd environments, concert-like staging, and complex cinematic coverage to evaluate how different systems handled public figure references, scene complexity, and storyboard consistency. The goal was not content generation itself but understanding model behavior, controllability, and platform limitations under realistic production conditions. Building inside ComfyUI provided the flexibility to run these tests without hitting platform guardrails that would otherwise obscure the model's actual capabilities.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">What I Learned</p>
+    <p>The biggest bottleneck in AI-assisted storyboarding is often not generation quality but workflow quality. Small pieces of manual work repeated hundreds of times can quickly outweigh the time saved by faster generation.</p>
+    <p>The testing also reinforced how important controllability is for production work. Models perform very differently when asked to handle complex scenes, large crowds, recognizable public figures, or highly specific cinematic compositions compared to standard prompts. Understanding those behaviors requires a system flexible enough to isolate and test them, which is what working directly in ComfyUI makes possible.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+</body>
+</html>

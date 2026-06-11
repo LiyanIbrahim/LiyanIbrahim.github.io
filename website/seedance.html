@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Generative Video Controllability — Liyan Ibrahim</title>
+  <style>
+    #seedancepage {
+      background-color: #0e0e0e;
+      color: #c0bdb8;
+      font-family: Arial, sans-serif;
+    }
+    #seedancepage .proj-title    { color: #f0ede8; }
+    #seedancepage .proj-subtitle { color: #7a6a52; }
+    #seedancepage .proj-content  { color: #c0bdb8; }
+    #seedancepage .proj-content p { margin-bottom: 10px; }
+    #seedancepage .proj-link     { color: #a08060; border-bottom-color: #a08060; }
+    #seedancepage .proj-link:hover { color: #c4a07a; }
+    #seedancepage #back          { filter: invert(1) brightness(0.5); }
+    #seedancepage .proj-section-label {
+      color: #7a6a52;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    #seedancepage .proj-images img {
+      border: 1px solid #1e1c1a;
+    }
+    #seedancepage video {
+      display: block;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid #1e1c1a;
+    }
+    #seedancepage .video-wrap {
+      margin: 32px auto;
+      max-width: 900px;
+      padding: 0 5%;
+    }
+  </style>
+</head>
+<body id="seedancepage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">Generative Video Controllability Research</h1>
+  <p class="proj-subtitle">ComfyUI · Seedance · Image-to-Video · Multimodal Evaluation</p>
+
+  <div class="proj-images">
+    <img src="outfittest.png" alt="ComfyUI Seedance workflow" style="max-height: 65vh;">
+  </div>
+
+  <div class="proj-content">
+    <p>An applied research framework built in ComfyUI to evaluate the controllability, reliability, and multimodal reasoning behavior of state-of-the-art image-to-video generation models. The central question driving the research: when a model is provided with both visual references and textual instructions that conflict, which input does it actually prioritize?</p>
+    <p>This question has direct production implications. AI content pipelines depend on predictable model behavior. If a model ignores reference images in favor of prompt semantics, workflows built around reference conditioning will produce unreliable results at scale. Understanding the hierarchy of inputs is a precondition for designing pipelines that work.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Experimental Design</p>
+    <p>The framework used controlled experiments with systematically varied inputs: real-person photographs, outfit references, style references, and deliberately conflicting prompt instructions. Each experiment isolated a single variable (identity, appearance, prompt semantics, conditioning strength) while holding others constant, enabling clean comparison of how the model weighted competing inputs.</p>
+    <p>Experiments covered real-person animation and motion generation, outfit and wardrobe transformations, character identity preservation across motion, reference image adherence under strong prompt pressure, prompt-following behavior when contradicting visual input, multi-image conditioning strategies, and camera movement and scene transitions. Automated ComfyUI pipelines generated and catalogued hundreds of outputs across these scenarios, making systematic side-by-side comparison tractable at scale.</p>
+  </div>
+
+  <div class="video-wrap">
+    <video autoplay loop muted playsinline>
+      <source src="Seedance2.0_r2v_00001_.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Key Finding: Prompt Primacy</p>
+    <p>Seedance consistently prioritized textual instructions over visual reference inputs when the two conflicted. Across experiments, the model followed prompt semantic intent even when those instructions directly contradicted the provided image references, substituting described attributes for reference-defined ones rather than preserving the source material.</p>
+    <p>This is not a failure mode in the general case. Prompt primacy produces strong creative flexibility and accurate instruction-following for open-ended generation tasks. It becomes a problem specifically in production contexts requiring strict identity preservation, wardrobe fidelity, or appearance consistency, where the reference image is the ground truth and the prompt is supplemental guidance.</p>
+    <p>A secondary finding: adding more reference images did not reliably strengthen conditioning. The relationship between image count and output fidelity was non-linear and dependent on prompt structure. Workflow design, conditioning strategy, and how competing inputs were framed within the prompt had a larger effect on reference adherence than the number of reference images provided.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Production Implications</p>
+    <p>The research established a reusable benchmarking framework for evaluating image-to-video models against production requirements before committing them to a pipeline. The findings directly informed workflow recommendations for teams building AI-native content systems: identifying which generation tasks Seedance handles reliably without additional controls, and which tasks require fine-tuning, LoRA conditioning, or prompt engineering constraints to achieve production-quality output.</p>
+    <p>The core contribution is methodological: a repeatable evaluation protocol that surfaces model behavior under realistic production conditions rather than benchmark-optimized prompts, giving teams a more accurate picture of what a model will actually do in a deployed workflow.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+</body>
+</html>

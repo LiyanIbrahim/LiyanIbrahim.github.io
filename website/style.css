@@ -673,6 +673,7 @@ header{
 #styletransferpage .proj-subtitle { color: #e8a8c8; }
 #styletransferpage .proj-content  { color: #e0dff0; }
 #styletransferpage .proj-list     { color: #e0dff0; }
+#styletransferpage .proj-section-label { color: #e8a8c8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
 /* ============================================================ */
 #titleOpengulf{
 	text-align: center;
@@ -1749,6 +1750,95 @@ margin-left:-30%;
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Back button */
+  #back {
+    width: 10% !important;
+    min-width: 36px;
+    top: 16px;
+    left: 16px;
+  }
+
+  /* Logo on projects/about */
+  #logo {
+    width: 20% !important;
+    min-width: 60px;
+  }
+
+  /* Project page titles */
+  .proj-title {
+    font-size: 24px !important;
+    padding: 0 5%;
+    margin-top: 60px;
+  }
+
+  .proj-subtitle {
+    font-size: 12px !important;
+    padding: 0 5%;
+  }
+
+  /* Project page body text */
+  .proj-content {
+    padding: 0 6% !important;
+    font-size: 15px !important;
+  }
+
+  /* Images */
+  .proj-images img,
+  .proj-images video {
+    max-height: 40vh !important;
+    max-width: 92vw !important;
+  }
+
+  /* Section labels */
+  .proj-section-label {
+    font-size: 0.65rem;
+  }
+
+  /* Carousel */
+  #carousel {
+    height: 55vw !important;
+  }
+
+  /* Before/after slider */
+  .ba-slider {
+    width: 95% !important;
+  }
+
+  /* Parameter table on comfystyle page */
+  .param-table td:first-child {
+    width: 100px !important;
+    font-size: 0.7rem !important;
+  }
+  .param-table td {
+    font-size: 0.8rem !important;
+    padding: 6px 8px !important;
+  }
+
+  /* Screenshots side-by-side -> stack */
+  .screenshots {
+    flex-direction: column !important;
+  }
+  .screenshots img {
+    flex: unset !important;
+    width: 100% !important;
+  }
+
+  /* Video wrap */
+  .video-wrap {
+    padding: 0 4% !important;
+  }
+
+  /* Type container hint text */
+  #typecontainer {
+    font-size: 11px !important;
+  }
 }
 
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Sketch to Cinematic — Liyan Ibrahim</title>
+  <style>
+    #comfystylepage {
+      background-color: #111010;
+      color: #c2bdb5;
+      font-family: Arial, sans-serif;
+    }
+    #comfystylepage .proj-title    { color: #f0ece6; }
+    #comfystylepage .proj-subtitle { color: #8c6f4e; }
+    #comfystylepage .proj-content  { color: #c2bdb5; }
+    #comfystylepage .proj-content p { margin-bottom: 10px; }
+    #comfystylepage .proj-link     { color: #b8895a; border-bottom-color: #b8895a; }
+    #comfystylepage .proj-link:hover { color: #d4a87a; }
+    #comfystylepage #back          { filter: invert(1) brightness(0.5); }
+    #comfystylepage .proj-section-label {
+      color: #8c6f4e;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    #comfystylepage .param-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 0.85rem;
+    }
+    #comfystylepage .param-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #2a2520;
+      vertical-align: top;
+    }
+    #comfystylepage .param-table td:first-child {
+      color: #b8895a;
+      font-family: monospace;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      width: 160px;
+    }
+    #comfystylepage .param-table td:nth-child(2) {
+      color: #f0ece6;
+      font-weight: 500;
+      width: 80px;
+    }
+    #comfystylepage .param-table td:nth-child(3) {
+      color: #9a9590;
+    }
+    #comfystylepage .node-image {
+      max-height: 500px;
+      width: auto;
+      border: 1px solid #2a2520;
+    }
+  </style>
+</head>
+<body id="comfystylepage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">Sketch to Cinematic</h1>
+  <p class="proj-subtitle">ComfyUI · Magnific · Style Transfer · AI Workflow</p>
+
+  <div class="proj-images">
+    <img src="comfystyle.png" alt="ComfyUI style transfer workflow" style="max-height: 65vh;">
+  </div>
+
+  <div class="proj-content">
+    <p>A production ComfyUI workflow for translating hand-drawn storyboard sketches into fully rendered cinematic frames. Source drawings — charcoal, ink, and pencil — are fed into a parallel Magnific Image Style Transfer pipeline alongside a cinematic reference, producing stylistically coherent outputs that preserve the original composition while inheriting lighting, atmosphere, and color grade from the reference material.</p>
+    <p>This workflow was built as a direct extension of earlier <a class="proj-link" href="styletransfer.html">style transfer research</a>, moving from single-image exploration into a scalable, batch-parallel production system designed for multi-frame storyboard sequences.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Why Magnific over ControlNet / IP-Adapter</p>
+    <p>Standard style transfer stacks in ComfyUI — ControlNet canny/lineart conditioning paired with IP-Adapter or style LoRAs — perform well when source and target share visual register. The sketch-to-cinematic gap is a harder problem: the source carries no texture, no lighting, and no depth information. ControlNet preserves structure but cannot synthesize photorealistic lighting from line art alone. IP-Adapter transfers style globally but frequently loses structural fidelity on loose sketch inputs.</p>
+    <p>Magnific's Image Style Transfer node approaches the problem differently. It separates structural preservation from stylistic transformation into two independent control axes, allowing precise calibration of how much of the original sketch's composition survives versus how aggressively the cinematic reference overrides the input. For sketch-to-render workflows, this decoupling is the critical technical advantage.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">The Magnific Node — Parameter Breakdown</p>
+    <div class="proj-images" style="margin-bottom: 24px;">
+      <img src="comfynode.png" alt="Magnific Image Style Transfer node" class="node-image">
+    </div>
+
+    <table class="param-table">
+      <tr>
+        <td>style_strength</td>
+        <td>100</td>
+        <td>Maximum stylistic transformation. At 100, the node makes no attempt to preserve the sketch's visual texture — the output inherits color, lighting, and rendering quality entirely from the reference. This is the correct setting when the source is a raw sketch with no tonal information worth preserving.</td>
+      </tr>
+      <tr>
+        <td>structure_strength</td>
+        <td>50</td>
+        <td>The most critical parameter for sketch input. At 50, the pipeline preserves compositional geometry — figure placement, depth planes, directional motion — without being locked to the sketch's rough linework artifacts. Too high (80–100) and sketch jaggedness bleeds into the output. Too low (10–20) and the cinematic reference overwhelms composition, losing the original framing. 50 is the empirically calibrated midpoint for charcoal/ink source material.</td>
+      </tr>
+      <tr>
+        <td>flavor</td>
+        <td>faithful</td>
+        <td>Disables creative deviation. The "creative" flavor allows the model to hallucinate detail beyond the reference — useful for purely generative work but counterproductive here, where the reference image defines a specific, locked aesthetic. "Faithful" keeps the model anchored to the reference's actual visual language.</td>
+      </tr>
+      <tr>
+        <td>engine</td>
+        <td>balanced</td>
+        <td>Trades peak quality for cross-frame consistency. In a multi-node parallel batch, the "quality" engine can introduce stylistic drift between outputs as it optimizes each frame independently. "Balanced" produces slightly lower individual fidelity but maintains tighter visual coherence across the full sequence — essential for storyboard workflows where frames must read as a unified set.</td>
+      </tr>
+      <tr>
+        <td>fixed_generation</td>
+        <td>on</td>
+        <td>Locks the random seed across the batch. Without this, re-running the workflow produces different stylistic interpretations of the same input. With it enabled, results are deterministic — allowing iterative parameter adjustments without losing the current output as a baseline comparison.</td>
+      </tr>
+      <tr>
+        <td>portrait_mode</td>
+        <td>disabled</td>
+        <td>Portrait mode enables face-specific enhancement processing. Disabled here because the source material is full-frame compositional scenes, not portrait crops — enabling it would apply inappropriate face-optimized processing to landscape action frames.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Workflow Architecture</p>
+    <p>The pipeline uses a parallel multi-input topology: each source sketch routes through its own dedicated Magnific node rather than processing sequentially through a shared pass. This design has two advantages. First, processing time scales with the slowest single node rather than the total node count — a batch of six sketches completes in roughly the same wall-clock time as a single image. Second, each node can receive per-frame parameter overrides if a specific sketch requires different structure preservation, without affecting the rest of the batch.</p>
+    <p>All nodes share the same reference image input via a single Load Image node wired to every style transfer node's <code>reference_image</code> port. This ensures stylistic coherence across the full output set — every frame is conditioned on identical reference material, preventing the tonal drift that occurs when references are applied independently.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Structural Preservation in Practice</p>
+    <p>The outputs demonstrate the calibration working as intended. Compositional elements from the sketches — figure positions, horizon lines, implied depth, directional energy of mark-making — survive the transformation and remain readable in the final cinematic frames. The loose, gestural quality of the source drawings is absorbed rather than fought: the model treats gestural marks as compositional intent rather than noise to be corrected.</p>
+    <p>This is the harder problem in sketch-to-render workflows. Preserving tight technical drawings is straightforward. Preserving the spatial logic of loose expressive sketches while synthesizing fully rendered photorealistic output requires a model that operates at the semantic level of composition rather than the pixel level of linework.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+</body>
+</html>

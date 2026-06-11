@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>Episodic AI Pipeline — Liyan Ibrahim</title>
+  <style>
+    #pipelinepage {
+      background-color: #0a0c12;
+      color: #b8bece;
+      font-family: Arial, sans-serif;
+    }
+    #pipelinepage .proj-title    { color: #e8eaf0; }
+    #pipelinepage .proj-subtitle { color: #5a7abf; }
+    #pipelinepage .proj-content  { color: #b8bece; }
+    #pipelinepage .proj-content p { margin-bottom: 10px; }
+    #pipelinepage .proj-link     { color: #6a8fd4; border-bottom-color: #6a8fd4; }
+    #pipelinepage .proj-link:hover { color: #8aaae8; }
+    #pipelinepage #back          { filter: invert(1) brightness(0.5); }
+    #pipelinepage .proj-section-label {
+      color: #5a7abf;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    #pipelinepage .proj-images img {
+      border: 1px solid #1c2030;
+    }
+    #pipelinepage .screenshots {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 32px auto;
+      max-width: 900px;
+      padding: 0 5%;
+    }
+    #pipelinepage .screenshots img {
+      flex: 1 1 calc(50% - 8px);
+      min-width: 280px;
+      max-width: 100%;
+      border: 1px solid #1c2030;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body id="pipelinepage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">AI-Native Episodic Content Pipeline</h1>
+  <p class="proj-subtitle">ComfyUI · LoRA Training · LLM Extraction · Production Automation</p>
+
+  <div class="proj-images">
+    <img src="pipelinehero.png" alt="Episodic pipeline workflow" style="max-height: 65vh;">
+  </div>
+
+  <div class="proj-content">
+    <p>A large-scale AI production pipeline built for a major entertainment client, processing over 50 episode scripts into a consistent, character-driven visual asset library. The core engineering challenge was not generation quality — it was consistency at scale: maintaining recognizable characters, coherent visual language, and narrative continuity across thousands of assets spanning multiple episodes, locations, and emotional registers.</p>
+  </div>
+
+  <div class="proj-images">
+    <img src="pipeline1.png" alt="Location reference and asset generation" style="max-width: 900px; width: 100%;">
+  </div>
+
+  <div class="proj-images">
+    <img src="pipeline2.png" alt="Episodic pipeline workflow" style="max-width: 100%; width: auto;">
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Character Consistency at Scale — LoRA Training Pipeline</p>
+    <p>The fundamental problem with high-volume AI asset generation for episodic content is identity drift. A character generated across hundreds of scenes, emotions, and camera angles will gradually drift from their reference appearance unless the model has been explicitly conditioned on that character's visual identity. Prompt-based character description alone cannot solve this — natural language descriptions of appearance are too underspecified to constrain generation reliably across diverse contexts.</p>
+    <p>The solution was a custom character extraction and LoRA training pipeline. Scripts were parsed using an LLM-based entity extraction layer that identified recurring characters, tracked their episodic appearances, and pulled dialogue, action lines, and scene context associated with each character. This structured character data was then used to construct curated training datasets — selecting, captioning, and preprocessing source images to build per-character LoRA models.</p>
+    <p>The trained LoRAs were integrated into the ComfyUI generation workflows as character conditioning layers, giving the pipeline reliable identity control independent of prompt variation. The same character could be generated across wildly different scenes — jungle environments, interior close-ups, action sequences, emotional beats — while maintaining recognizable facial structure, costume consistency, and stylistic coherence with the broader visual language of the production.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Safety-Aware Shotlist Generation</p>
+    <p>AI-generated shotlists at production scale exhibit a predictable failure distribution: the same problematic shot types, cinematic clichés, and production-incompatible framings recur across batches regardless of prompt quality. The standard response — manual review and correction — does not scale to episodic volume.</p>
+    <p>The quality-control framework built here moves the correction upstream, into the generation process itself. The system maintains a structured registry of "red flag" patterns: specific visual configurations, shot types, and compositional choices that had been identified as production failures through prior batch review. Alongside these, curated examples of both successful and unsuccessful outputs were catalogued with annotated reasoning about why each succeeded or failed.</p>
+    <p>This knowledge was injected into the generation pipeline as structured guidance — not as a simple negative prompt list, but as contextual generation constraints that conditioned output toward production-compatible framing decisions. The result was a measurable reduction in problematic shots across batches and a corresponding reduction in downstream creative review time. Rather than filtering bad output after the fact, the pipeline was designed to be less likely to produce it in the first place.</p>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">ComfyUI Workflow Architecture</p>
+    <p>The asset generation layer was built on a set of purpose-built ComfyUI workflows handling distinct production tasks: character turnarounds across standardized camera angles and lighting conditions, environment exploration generating multiple atmospheric and lighting variations of each location, storyboard panel generation combining character LoRAs with environment conditioning and shot-specific framing, and batch asset pipelines for high-volume generation with automated prompt construction from script data.</p>
+    <p>Each workflow used reference conditioning alongside the trained LoRAs — rather than relying on a single generation mode, the pipeline could accept a reference frame, a character description, a location brief, or a combination, and route the appropriate conditioning inputs accordingly. Automated prompt construction, seeded from the structured script data extracted upstream, eliminated manual prompt authoring for the majority of generation tasks and ensured that scene context, character state, and narrative beat were consistently represented in the outputs.</p>
+    <p>The architecture was designed for repeatability: every generation run was seeded and logged, allowing specific outputs to be reproduced exactly, parameter variations to be tracked across batches, and quality regressions to be diagnosed against known-good configurations.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+</body>
+</html>

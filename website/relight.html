@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="shortcut icon" href="favicon.png">
+  <title>AI Relighting System — Liyan Ibrahim</title>
+  <style>
+    #relightpage {
+      background-color: #0d0d0f;
+      color: #bdbac0;
+      font-family: Arial, sans-serif;
+    }
+    #relightpage .proj-title    { color: #edeaf5; }
+    #relightpage .proj-subtitle { color: #6a5f8a; }
+    #relightpage .proj-content  { color: #bdbac0; }
+    #relightpage .proj-content p { margin-bottom: 10px; }
+    #relightpage .proj-link     { color: #8a72b8; border-bottom-color: #8a72b8; }
+    #relightpage .proj-link:hover { color: #a994d4; }
+    #relightpage #back          { filter: invert(1) brightness(0.5); }
+    #relightpage .proj-section-label {
+      color: #6a5f8a;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    #relightpage .proj-images img {
+      border: 1px solid #1a1820;
+    }
+
+    /* Before/After Slider */
+    .ba-slider {
+      position: relative;
+      display: block;
+      margin: 32px auto;
+      max-width: 900px;
+      width: 90%;
+      border: 1px solid #1a1820;
+      cursor: ew-resize;
+      user-select: none;
+    }
+    .ba-slider .ba-before {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .ba-slider .ba-after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: inset(0 50% 0 0);
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: rgba(255,255,255,0.75);
+      pointer-events: none;
+    }
+    .ba-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #111;
+    }
+    .ba-label {
+      position: absolute;
+      bottom: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      pointer-events: none;
+    }
+    .ba-label-before { right: 12px; }
+    .ba-label-after  { left: 12px; }
+  </style>
+</head>
+<body id="relightpage">
+  <a href="projects.html"><img id="back" src="back.png"></a>
+
+  <h1 class="proj-title">Prompt-Controlled AI Relighting System</h1>
+  <p class="proj-subtitle">ComfyUI · NanoBanana · Image Editing · Lighting Exploration</p>
+
+  <div class="proj-images">
+    <img src="relightworkflow.png" alt="Relight ComfyUI workflow" style="max-height: 65vh;">
+  </div>
+
+  <div class="proj-content">
+    <p>A reusable ComfyUI workflow powered by NanoBanana for rapid image relighting and lighting exploration. The workflow takes a single source image and generates multiple lighting variations through prompt-driven relighting, enabling fast iteration on mood, atmosphere, and visual style while preserving the original subject, composition, and scene structure.</p>
+    <p>Designed as a production-ready template, the system allows creators to explore a wide range of lighting conditions including golden hour, cinematic night lighting, studio lighting, dramatic contrast, soft overcast lighting, and stylized color treatments from a single image input.</p>
+  </div>
+
+  <!-- Before / After Slider -->
+  <div class="ba-slider" id="baSlider">
+    <img class="ba-before" src="after.png" alt="Before relighting">
+    <img class="ba-after" id="baAfterImg" src="before.JPG" alt="After relighting">
+    <div class="ba-handle" id="baHandle">
+      <div class="ba-handle-btn">⟷</div>
+    </div>
+  </div>
+
+  <div class="proj-content">
+    <p class="proj-section-label">Workflow Design</p>
+    <p>The workflow streamlines look development and creative direction by reducing the time required to manually create lighting variations. Rather than re-shooting or manually compositing light sources in post, the system uses prompt orchestration to drive relighting from a single input image. The result is a fast, non-destructive iteration loop suited to concept development, storyboarding, marketing assets, and AI-assisted content production.</p>
+    <p>For the reference subject I used my own face deliberately. Facial identity is the hardest thing for a relighting model to get right — small shifts in skin tone, shadow placement, or highlight intensity are immediately legible to any viewer in a way that abstract scenes are not. Using a known face as the test subject made it possible to detect the slightest variations in output quality: whether the model was truly relighting the existing structure or subtly reconstructing facial features, and whether identity was being preserved or quietly drifting across lighting conditions.</p>
+    <p>Built as a reusable template, the workflow accepts any source image and requires only a prompt change to generate a new lighting scenario. Identity and composition are preserved across all variations, so creative teams can explore the full lighting space of a shot without re-generating or losing the underlying asset.</p>
+  </div>
+
+  <div style="height:80px;"></div>
+
+  <script>
+    const slider   = document.getElementById('baSlider');
+    const handle   = document.getElementById('baHandle');
+    const afterImg = document.getElementById('baAfterImg');
+
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = (x - rect.left) / rect.width;
+      pct = Math.max(0.02, Math.min(0.98, pct));
+      afterImg.style.clipPath = `inset(0 ${(1 - pct) * 100}% 0 0)`;
+      handle.style.left = (pct * 100) + '%';
+    }
+
+    slider.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      setPosition(e.clientX);
+      const move = (e) => setPosition(e.clientX);
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', () => document.removeEventListener('mousemove', move), { once: true });
+    });
+
+    slider.addEventListener('touchstart', (e) => {
+      setPosition(e.touches[0].clientX);
+      const move = (e) => setPosition(e.touches[0].clientX);
+      document.addEventListener('touchmove', move, { passive: true });
+      document.addEventListener('touchend', () => document.removeEventListener('touchmove', move), { once: true });
+    });
+  </script>
+</body>
+</html>
